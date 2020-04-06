@@ -84,5 +84,20 @@ public class _06_从尾到头打印链表 {
         }
         return arr;
     }
+    //10点13分 2020/4/5 使用动态数组进行实现
+    public int[] reversePrint02(ListNode head) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        while (head!=null){
+            arrayList.add(0,head.val);
+            head = head.next;
+        }
+        int[] arr;
+        arr = new int[arrayList.size()];
+        for (int i = 0;i<arr.length;i++){
+            arr[i] = arrayList.remove(arrayList.size()-1);
+
+        }
+        return arr;
+    }
 
 }

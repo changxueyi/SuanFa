@@ -38,7 +38,7 @@ public class _18_删除链表的节点 {
     }
 
 
-    //20点47分  2020/3/14
+  /*  //20点47分  2020/3/14
     public ListNode deleteNode2(ListNode head, int val) {
 <<<<<<< HEAD
         if (head.val == val) return head.next;
@@ -76,5 +76,5 @@ public class _18_删除链表的节点 {
 =======
         System.out.println("删除链表的节点："+deleteNode(node1, 5) );
 >>>>>>> a454660e5d5a51bb6461888777cf74cf727f8c22
-    }
+    }*/
 }

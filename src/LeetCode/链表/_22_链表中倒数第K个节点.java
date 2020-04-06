@@ -17,7 +17,6 @@ public class _22_链表中倒数第K个节点 {
 
     //解体思路是：双指针，中间相差K个节点，前面指针指到头，这个指针就是要删除的节点
 
-<<<<<<< HEAD
     //13点59
     public ListNode getKthFromEnd(ListNode head, int k) {
         ListNode former = head;
@@ -44,8 +43,19 @@ public class _22_链表中倒数第K个节点 {
         }
         return latter;
     }
-=======
-    //13点59分
 
->>>>>>> a454660e5d5a51bb6461888777cf74cf727f8c22
+    //10点38分 2020/4/5
+    public ListNode getKthFromEnd02(ListNode head, int k) {
+        ListNode fast =head;
+        ListNode slow = head;
+        for (int i=0;i<k;i++){
+            fast= fast.next;
+        }
+        while (fast!=null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+
 }
