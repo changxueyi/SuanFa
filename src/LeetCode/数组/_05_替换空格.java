@@ -66,10 +66,8 @@ public class _05_替换空格 {
         StringBuilder sb = new StringBuilder();
         for (int i = 0 ; i<s.length();i++){
             char c = s.charAt(i);
-<<<<<<< HEAD
+
             //真香警告，这里是单字符，不要弄成双字符
-=======
->>>>>>> a454660e5d5a51bb6461888777cf74cf727f8c22
             if (c==' ')
                 sb.append("%20");
             else {

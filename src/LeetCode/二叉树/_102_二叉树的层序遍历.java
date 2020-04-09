@@ -41,6 +41,7 @@ public class _102_二叉树的层序遍历 {
             for (int i = 0; i < len; i++) {
                 //定义node接收出队节点，然后加入数组tmp中，
                 //把这个节点弹出来，放入数组中
+                //poll：将首个元素从队列中弹出，如果队列是空的，就返回null
                 TreeNode node = q.poll();
                 tmp.add(node.val);
                 if (node.left != null) {

@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @ClassName _09_两个栈实现队列
- * @Description TODO
+ * @Description TODO 总结：栈里面没有==null这样的，直接判空就是isEmpty（），调用去判空
  * @Author changxueyi
  * @Date 2020/2/15 20:38
  */
