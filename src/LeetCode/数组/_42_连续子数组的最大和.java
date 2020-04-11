@@ -8,4 +8,8 @@ package LeetCode.数组;
  * @Date 2020/3/30 10:00
  */
 public class _42_连续子数组的最大和 {
+    public int maxSubArray(int[] nums) {
+        return 1;
+        //动态规划的题
+    }
 }

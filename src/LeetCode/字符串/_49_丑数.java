@@ -1,4 +1,4 @@
-package LeetCode.数组;
+package LeetCode.字符串;
 
 import static java.util.Collections.min;
 
