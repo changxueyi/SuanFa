@@ -25,6 +25,22 @@ public class _94_二叉树中序遍历 {
         dfs(root.right, arrayList);
     }
 
+    // 二分搜索树的中序遍历
+    TreeNode root;
+    public void inOrder(){
+        inOrder(root);
+    }
+
+    // 中序遍历以node为根的二分搜索树, 递归算法
+    private void inOrder(TreeNode root){
+        if(root == null)
+            return;
+
+        inOrder(root.left);
+        System.out.println(root.val);
+        inOrder(root.right);
+    }
+
     //中序遍历，非递归实现
     public List<Integer> preorderTraversal01(TreeNode root) {
             List<Integer> res = new ArrayList<>();

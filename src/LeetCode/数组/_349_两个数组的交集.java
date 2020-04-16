@@ -15,17 +15,17 @@ import java.util.HashSet;
  */
 public class _349_两个数组的交集 {
     //给两个数组，返回一个公共的数组
-    //想不通，我这个代码的问题出在哪里了
-   public static int[] intersection3(int[] nums1, int[] nums2) {
+    public static int[] intersection3(int[] nums1, int[] nums2) {
         if (nums1 == null || nums1.length == 0 || nums2 == null || nums2.length == 0) {
             return new int[0];
         }
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         ArrayList<Integer> arrayList = new ArrayList<>();
-
+        int c = 0;
         for (int i = 0; i < nums1.length; i++) {
             int a = nums1[i];
             map.put(a, 1);
+            map.put(a, c++);
         }
         for (int j = 0; j < nums2.length; j++) {
             int b = nums2[j];
@@ -34,9 +34,16 @@ public class _349_两个数组的交集 {
                 map.remove(b);
             }
         }
-        int[] arr = arrayList.stream().mapToInt(p->p.intValue()).toArray();
+        //动态数组转数组，可以使用for循环进行遍历
+        //int[] arr = arrayList.stream().mapToInt(p -> p.intValue()).toArray();
+        int[] arr;
+        arr = new int[arrayList.size()];
+        for (int i = 0; i < arrayList.size(); i++) {
+           arr[i] = arrayList.get(i);
+        }
         return arr;
     }
+
     public static int[] intersection(int[] nums1, int[] nums2) {
 
         HashSet<Integer> set = new HashSet<>();
@@ -72,13 +79,13 @@ public class _349_两个数组的交集 {
             hashSet2.add(b);
         }
         ArrayList<Integer> arrayList = new ArrayList<>();
-        for (int c: hashSet1){
-            if (hashSet2.contains(c)){
+        for (int c : hashSet1) {
+            if (hashSet2.contains(c)) {
                 arrayList.add(c);
             }
         }
         int[] res = new int[arrayList.size()];
-        for (int i = 0;i<arrayList.size();i++){
+        for (int i = 0; i < arrayList.size(); i++) {
             res[i] = arrayList.get(i);
         }
         return res;
