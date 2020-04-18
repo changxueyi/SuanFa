@@ -1,6 +1,5 @@
 package Test2;
 
-import Test.链表._25_合并两个有序链表;
 
 /**
  * @ClassName _12_合并两个有序链表
