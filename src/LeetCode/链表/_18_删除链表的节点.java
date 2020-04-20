@@ -24,6 +24,8 @@ public class _18_删除链表的节点 {
         //典型的快慢指针，双指针走路，一个走在前，一个走在后，
         //当走在前的那个指针指到val 或者 走完等于null时候，跳出来
         //让走在后面的直接 指过去，即可删除这个节点
+        if (head==null)return null;
+        //删除头结点时
         if (head.val == val)
             return head.next;
         //定义两个指针，一前一后

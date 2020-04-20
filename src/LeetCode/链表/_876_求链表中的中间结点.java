@@ -12,6 +12,7 @@ public class _876_求链表中的中间结点 {
         ListNode slow = head;
         ListNode fast = head;
         //下面这句话，适用于奇数，偶数
+        //为啥不是或者，而是并且？？？？？？？？？？？？？？？？？？？
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;

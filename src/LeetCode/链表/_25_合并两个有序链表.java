@@ -11,24 +11,24 @@ public class _25_合并两个有序链表 {
         //1.定义三个指针执行三条链
         ListNode head1 = l1;
         ListNode head2 = l2;
-        ListNode newHead = new ListNode(-1 );
+        ListNode newHead = new ListNode(-1);
         ListNode ptr = newHead;
 
         //2.移动两条链的指针
-        while (head1!=null&&head2!=null){
-            if (head1.val<head2.val){
-                ptr.next=head1;
+        while (head1 != null && head2 != null) {
+            if (head1.val < head2.val) {
+                ptr.next = head1;
                 head1 = head1.next;
-            }else {
-                ptr.next=head2;
+            } else {
+                ptr.next = head2;
                 head2 = head2.next;
             }
             ptr = ptr.next;
         }
-        if (head1==null)
-            ptr.next=head2;
+        if (head1 == null)
+            ptr.next = head2;
         else
-            ptr.next=head1;
+            ptr.next = head1;
         return newHead.next;
     }
 
@@ -45,16 +45,19 @@ public class _25_合并两个有序链表 {
             if (a1.val > a2.val) {
                 a3.next = a2;
                 a2 = a2.next;
-            } else{
+            } else {
                 a3.next = a1;
-                a1 = a1.next;}
+                a1 = a1.next;
+            }
             a3 = a3.next;
         }
-        if (a1 == null){
-            a3.next = a2;}
-        else {
-            a3.next= a1;
+        if (a1 == null) {
+            a3.next = a2;
+        } else {
+            a3.next = a1;
         }
         return newListNode.next;
     }
+
+
 }

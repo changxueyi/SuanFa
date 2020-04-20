@@ -7,6 +7,7 @@ package LeetCode.链表;
  * @Date 2020/4/14 9:48
  */
 public class _83_删除排序链表中的重复元素 {
+    //排序好的
     public ListNode deleteDuplicates(ListNode head) {
         ListNode cur = head;
         while (cur!=null&&cur.next != null){
