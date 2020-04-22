@@ -13,6 +13,7 @@ public class SX_删除数组中重复元素 {
     //前提，数组是有序的
 
     //快慢指针
+    //消除重复元素，返回消除后的节点数量
     public static int fun(int[] nums) {
         if (nums.length == 0) return 0;
         int a = 0;
@@ -23,8 +24,8 @@ public class SX_删除数组中重复元素 {
             }
         }
         return a + 1;
-
     }
+
 
     public static void main(String[] args) {
         int arr[] = new int[]{1, 2, 3, 3, 3, 4, 5, 5, 5};

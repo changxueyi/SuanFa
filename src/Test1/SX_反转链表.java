@@ -29,4 +29,37 @@ public class SX_反转链表 {
         }
         return b;
     }
+
+
+    public static ListNode fun01(ListNode head) {
+        ListNode pre = null;
+        ListNode dummy = null;
+        ListNode cur = head;
+        while (cur != null) {
+            pre = cur.next;
+            cur.next = dummy;
+            dummy = cur;
+            cur = pre;
+        }
+        return dummy;
+    }
+
+    public static void main(String[] args) {
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(2);
+        ListNode node4 = new ListNode(2);
+        ListNode node5 = new ListNode(3);
+        ListNode node6 = new ListNode(5);
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+        node5.next = node6;
+        ListNode a = fun01(node1);
+        while (a != null) {
+            System.out.print(a.val + "->");
+            a = a.next;
+        }
+    }
 }

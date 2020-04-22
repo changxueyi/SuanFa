@@ -32,14 +32,15 @@ public class _57_和为s的两个数字 {
         int[] arr;
         arr = new int[]{1, 3, 4, 5, 56};
         int target = 6;
-        int[] b = twoSum1(arr, target);
+
+        int[] b = twoSum(arr, target);
         System.out.println(b.toString());
     }
 
     //由于题目的数组条件为递增数组，所以可以采用双指针方法，
     // 一左一右，相加后与target比较，小->左指针右移，大->右指针左移，直至等于target。
     // 否则返回空数组。
-    public int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         //使用双指针
         int left = 0;
         int right = nums.length - 1;
@@ -52,6 +53,20 @@ public class _57_和为s的两个数字 {
                 return new int[]{nums[left], nums[right]};
         }
         return new int[]{};
+    }
+
+
+    //最牛逼的大神的解法
+    public int[] twoSum2(int[] nums, int target) {
+        int i = 0, j = nums.length - 1;
+        while (i < j) {
+            int s = nums[i] + nums[j];
+            if (s < target) i++;
+            else if (s > target) j--;
+            else
+                return new int[]{nums[i], nums[j]};
+        }
+        return new int[0];
     }
 
 

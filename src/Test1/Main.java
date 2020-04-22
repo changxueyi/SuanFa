@@ -21,5 +21,10 @@ public class Main {
         node5.next = node6;
     //    ListNode a  = fun1(node1,1);
      //   System.out.println(a.val);
+       // ListNode a = deleteDuplicates(node1);
+       // while (node1 != null) {
+        //    System.out.print(node1.val + "->");
+        //    node1 = node1.next;
+       // }
     }
 }

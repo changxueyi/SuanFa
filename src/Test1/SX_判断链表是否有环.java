@@ -17,7 +17,7 @@ public class SX_判断链表是否有环 {
         while (slow != fast) {
             //如果fast节点为空，或者节点的next为空，返回
 
-            if (fast==null || fast.next == null) {
+            if (fast == null || fast.next == null) {
                 return false;
             }
             slow = slow.next;
@@ -40,6 +40,11 @@ public class SX_判断链表是否有环 {
             slow = slow.next;
             fast = fast.next.next;
         }
+        return true;
+    }
+
+    public boolean fun(ListNode head) {
+        //必须用快慢指针做
         return true;
     }
 

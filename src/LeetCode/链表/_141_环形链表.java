@@ -7,6 +7,22 @@ package LeetCode.链表;
  * @Date 2020/4/5 14:18
  */
 public class _141_环形链表 {
+    //博主的https://www.cnblogs.com/kyoner/p/11087755.html
+    //下面3种方法都可以
+    boolean hasCycle1(ListNode head) {
+        ListNode fast, slow;
+        fast = slow = head;
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast == slow)
+                return true;
+        }
+        return false;
+    }
+
+
     public boolean hasCycle(ListNode head) {
         if (head==null||head.next==null){
             return false;

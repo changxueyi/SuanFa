@@ -29,6 +29,20 @@ public class _02_数组中重复的元素 {
         return -1;
     }
 
+    //快慢指针
+    //消除重复元素，返回消除后的节点数量
+    public static int fun(int[] nums) {
+        if (nums.length == 0) return 0;
+        int a = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[a]) {
+                a++;
+                nums[a] = nums[j];
+            }
+        }
+        return a + 1;
+    }
+
     public int findRepeatNumber(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

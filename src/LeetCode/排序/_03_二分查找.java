@@ -23,17 +23,17 @@ public class _03_二分查找 {
     }
 
     //14点19分 2020/3/15
-    public int bsearch(int[] a,int n,int value){
+    public int bsearch(int[] a, int n, int value) {
         int low = 0;
-        int high = n-1;
-        while (low<=high){
-            int mid = low+(high-low)/2;
-            if (a[mid]==value){
+        int high = n - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (a[mid] == value) {
                 return mid;
-            }else if (a[mid]<value){
-                low = mid+1;
-            }else {
-                high = mid-1;
+            } else if (a[mid] < value) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
             }
         }
         return -1;
