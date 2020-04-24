@@ -8,7 +8,7 @@ package Test1;
  */
 public class SX_快速排序 {
     //对arr[L,R] 进行快速排序
-   static void QuikSort(int arry[], int L, int R) {
+    static void QuikSort(int arry[], int L, int R) {
         if (L > R)
             return;
         int left = L;
@@ -30,20 +30,45 @@ public class SX_快速排序 {
             if (left >= right)
                 arry[left] = pivot;
         }
-        QuikSort(arry,L,right-1);
-        QuikSort(arry,right +1,R);
+        QuikSort(arry, L, right - 1);
+        QuikSort(arry, right + 1, R);
 
     }
 
-    public static void main(String[] args) {
-            int[] arr = {49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 22};
-            QuikSort(arr, 0, arr.length - 1);
-            System.out.println("排序后:");
-            for (int i : arr) {
-                System.out.println(i);
+    //手写快速排序
+    public static void fun(int[] arr, int L, int R) {
+        if (L > R) {
+            return;
+        }
+        int left = L;
+        int right = R;
+        int pivot = arr[left];
+        while (right > left) {
+            while (right > left && arr[right] >= pivot) {
+                right--;
             }
+            if (right > left)
+                arr[left] = arr[right];
+            while (right > left && arr[left] <= pivot)
+                left++;
+            if (right > left)
+                arr[right] = arr[left];
+            if (right <= left)
+                arr[left] = pivot;
         }
 
+        fun(arr, L, right - 1);
+        fun(arr, right + 1, R);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 22};
+        fun(arr, 0, arr.length - 1);
+        System.out.println("排序后:");
+        for (int i : arr) {
+            System.out.println(i);
+        }
+    }
 
 
 }

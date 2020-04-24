@@ -43,7 +43,21 @@ public class lc_01_02判定是否互为字符重排 {
         return true;
     }
 
-
+    public static boolean fun(String s1, String s2) {
+        int[] arr = new int[26];
+        for (int i = 0; i < s1.length(); i++) {
+            arr[s1.charAt(i) - 'a']++;
+        }
+        for (int j = 0; j < s2.length(); j++) {
+            arr[s1.charAt(j) - 'a']--;
+        }
+        for (int k = 0; k < 26; k++) {
+            if (arr[k]!=0){
+                return false;
+            }
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         String s1 = "aabbcc";

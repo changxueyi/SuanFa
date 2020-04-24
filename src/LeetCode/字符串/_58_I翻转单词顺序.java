@@ -19,7 +19,29 @@ public class _58_I翻转单词顺序 {
         }
         return res.toString().trim(); // 转化为字符串并返回
     }
-    //
+
+    //14点15分 2020/4/22 再战反转单词顺序
+    // hello word
+    // 0123456789
+    public static String fun(String s) {
+        s = s.trim();
+        int j = s.length() - 1;
+        int i = j;
+        StringBuilder res = new StringBuilder();
+        while (i >= 0) {
+            while (i >= 0 && s.charAt(i) != ' ') i--;
+            res.append(s.substring(i + 1, j + 1) + " ");
+            while (i >= 0 && s.charAt(i) == ' ') i--; // 跳过单词间空格
+            j = i; // j 指向下个单词的尾字符
+        }
+        return res.toString();
+    }
+
+    public static void main(String[] args) {
+        String s = "chang xue yi";
+        String a = fun(s);
+        System.out.println(a);
+    }
 
 
 }

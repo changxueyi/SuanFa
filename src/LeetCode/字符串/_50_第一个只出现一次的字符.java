@@ -26,6 +26,7 @@ public class _50_第一个只出现一次的字符 {
                 int nums = map.get(c);
                 //在次数超出 1 次之后，nums 再增加没意义，干脆节省一次put操作
                 if (nums <= 1) {
+                    //map.put(c,nums++)  这样写为什么就跑不通过了
                     map.put(c, nums + 1);
                 }
             } else {

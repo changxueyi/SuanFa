@@ -41,6 +41,24 @@ public class _21_调整数组顺序奇数位于偶数前面 {
         return nums;
     }
 
+    //Krahets 大佬的解法
+    public int[] exchange02(int[] nums) {
+        int i = 0;
+        int j = nums.length - 1;
+        int temp;
+        while (i < j) {
+            //是奇数的话，直接++；
+            while (i < j && (nums[i] & 1) == 1) i++;
+            //是偶数的话，直接--；
+            while (i < j && (nums[j] & 1) == 0) j--;
+            temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+        }
+        return nums;
+    }
+
+
     public static void main(String[] args) {
 
     }
