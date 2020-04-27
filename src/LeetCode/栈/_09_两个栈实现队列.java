@@ -94,19 +94,24 @@ public class _09_两个栈实现队列 {
     Stack<Integer> stack1 = new Stack<Integer>();
     Stack<Integer> stack2 = new Stack<Integer>();
 
+    //进队列，把元素直接仍第一个栈就可以了
     public void push(int node) {
         stack1.push(node);
     }
 
+    //出栈操作
     public int pop() {
+        //如果栈二为空，栈一不空，把栈一元素放栈二
         if (stack2.isEmpty()) {
             while (!stack1.isEmpty()) {
                 stack2.push(stack1.pop());
             }
         }
+        //如果栈一为空，栈二也为空，则抛出，队列为空
         if (stack2.isEmpty())
             //此处也可返回 -1
             throw new RuntimeException("Queue is empty!");
+        //出队列，就是把栈二元素弹出来
         return stack2.pop();
     }
 

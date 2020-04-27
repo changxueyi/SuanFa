@@ -1,6 +1,5 @@
 package LeetCode.数组;
 
-import com.sun.org.apache.xpath.internal.operations.String;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +9,6 @@ import java.util.Map;
  * @Description TODO
  * @Author changxueyi
  * @Date 2020/2/13 21:12
-
  * 在一个长度为n的数组里的所有数字都在0到n-1的范围内。
  * 数组中某些数字是重复的，但不知道有几个数字是重复的。
  * 也不知道每个数字重复几次。请找出数组中任意一个重复的数字。
@@ -18,12 +16,12 @@ import java.util.Map;
  */
 public class _02_数组中重复的元素 {
     public int findRepeatNumber1(int[] nums) {
-        Map<Integer,Integer> map = new HashMap<>();
-        for (int i =0;i<nums.length;i++){
-            if (map.containsKey(nums[i])){
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i])) {
                 return nums[i];
-            }else {
-                map.put(nums[i],10);
+            } else {
+                map.put(nums[i], 10);
             }
         }
         return -1;
@@ -43,7 +41,7 @@ public class _02_数组中重复的元素 {
         return a + 1;
     }
 
-    public int findRepeatNumber(int[] nums) {
+    public static int findRepeatNumber(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i])) {
@@ -54,27 +52,30 @@ public class _02_数组中重复的元素 {
         }
         return -1;
     }
+
     //10点03分 2020/3/12
     public int findRepeatNumber2(int[] nums) {
-        Map<Integer,Integer> map = new HashMap<>();
-        for (int i = 0 ; i<nums.length;i++){
-            if (map.containsKey(nums[i])){
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i])) {
                 return nums[i];
-            }else{
-                map.put(nums[i],10);
+            } else {
+                map.put(nums[i], 10);
             }
         }
         return -1;
     }
 
 
-
     /**
      * 测试用例
      */
     public static void main(int[] args) {
-        int arr[]=new int[]{1,2,3,4,5};
-        System.out.println(new _02_数组中重复的元素().findRepeatNumber(arr));
+        int arr[] = new int[]{1, 2, 3, 4, 5};
+      //  findRepeatNumber(arr);
+        System.out.println(findRepeatNumber(arr));
     }
+
+
 
 }

@@ -1,4 +1,4 @@
-package LeetCode.二叉树;
+package Test3;
 
 /**
  * @ClassName TreeNode

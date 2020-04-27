@@ -23,6 +23,7 @@ package LeetCode.二叉树;
  * 9   6 3   1
  */
 public class _27_二叉树的镜像 {
+    //最容易理解的解法
     public TreeNode mirrorTree(TreeNode root) {
         if (root == null)
             return root;
@@ -61,6 +62,16 @@ public class _27_二叉树的镜像 {
         if (root.right != null) {
             mirrorTree1(root.right);
         }
+        return root;
+    }
+
+
+    //Krahets 大神的解法
+    public TreeNode mirrorTree2(TreeNode root) {
+        if (root==null) return null;
+        TreeNode temp = root.left;
+        root.left = mirrorTree2(root.right);
+        root.right = mirrorTree2(temp);
         return root;
     }
 

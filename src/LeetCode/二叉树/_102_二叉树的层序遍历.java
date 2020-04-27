@@ -117,6 +117,7 @@ public class _102_二叉树的层序遍历 {
         queue.offer(root);
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
+            //poll：将首个元素从队列中弹出，如果队列是空的，就返回null
             System.out.println(node);
             if (node.left != null) {
                 queue.offer(node.left);
