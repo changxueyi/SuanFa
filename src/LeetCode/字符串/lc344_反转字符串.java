@@ -22,8 +22,8 @@ public class lc344_反转字符串 {
         int j = s.length - 1;
         for (int i = 0; i < s.length / 2; i++) {
             char temp = s[i];
-            s[i] = s[j - i - 1];
-            s[j - i - 1] = temp;
+            s[i] = s[j - i];
+            s[j - i ] = temp;
         }
     }
 }

@@ -177,6 +177,61 @@ public class SX_20200425 {
     //问题14：微信红包
 
     //问题15：美团二面： 删除字符串中出现次数最小的字符
+    //自己写的方法
+    public String fun(char[] arr) {
+        if (arr == null || arr.length == 0) return null;
+
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length - 1; i++) {
+            char c = arr[i];
+            if (map.containsKey(c)) {
+                int b = map.get(c);
+                map.put(c, ++b);
+            } else {
+                map.put(c, 1);
+            }
+        }
+        //Map中的map.keySet()方法 就是获取map的key的名称。
+        //用 for (String key : params.keySet())读取map
+        //KeySet():
+        //将Map中所有的键存入到set集合中。因为set具备迭代器。所有可以迭代方式取出所有的键，再根据get方法。获取每一个键对应的值。
+        // keySet():迭代后只能通过get()取key
+        Collection<Integer> values = map.values();//工具类要常用！
+        int minIndex = Collections.min(values);//直接借助collections找最值！
+        StringBuffer sb = new StringBuffer();
+        for (char keys : arr) {
+            if (map.get(keys) != minIndex) {
+                sb.append(keys);
+            }
+        }
+        return sb.toString();
+    }
+
+    //问题16：
+    //给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null 美团二面
+
+    // 参考 https://www.cnblogs.com/kyoner/p/11087755.html
+    public int huan1(ListNode head) {
+        if (head == null || head.next == null) return -1;
+        //双指针，一个走一步，一个走两步
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        slow = head;
+        while (slow != fast) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow.val;
+    }
+
+
 
 
 }
