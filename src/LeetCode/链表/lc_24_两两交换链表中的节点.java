@@ -42,6 +42,7 @@ public class lc_24_两两交换链表中的节点 {
             ListNode start = temp.next;
             ListNode end = temp.next.next;
             temp.next = end;
+            //这个位置特别的注意，下面两行代码不要弄反了
             start.next = end.next;
             end.next = start;
             temp = start;

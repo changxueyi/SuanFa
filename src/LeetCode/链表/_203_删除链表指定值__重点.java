@@ -8,7 +8,7 @@ package LeetCode.链表;
  * 输出: 1->2->3->4->5
  * @Date 2020/2/17 17:14
  */
-public class _203_删除链表指定值 {
+public class _203_删除链表指定值__重点 {
     //方法三 虚拟头节点 推荐使用
     public ListNode removeElements3(ListNode head, int val) {
 

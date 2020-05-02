@@ -48,10 +48,10 @@ public class _54_二叉搜索树的第K大节点 {
     }
 
     void dfs(TreeNode root) {
-        if (root==null) return;//递归终止条件
+        if (root == null) return;//递归终止条件
         dfs(root.right);
-        if (k==0) return;
-        if (--k==0) res = root.val;
+        if (k == 0) return;
+        if (--k == 0) res = root.val;
         dfs(root.left);
     }
 }

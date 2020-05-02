@@ -34,5 +34,19 @@ public class _206_反转链表 {
         return newHead;
     }
 
+    //非递归
+    public static ListNode fun01(ListNode head) {
+        ListNode pre = null;
+        ListNode dummy = null;
+        ListNode cur = head;
+        while (cur != null) {
+            pre = cur.next;
+            cur.next = dummy;
+            dummy = cur;
+            cur = pre;
+        }
+        return dummy;
+    }
+
 
 }

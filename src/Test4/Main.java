@@ -1,4 +1,6 @@
-package LeetCode.链表;
+package Test4;
+
+import LeetCode.链表.ListNode;
 
 /**
  * @ClassName Main
@@ -19,26 +21,21 @@ public class Main {
         ListNode node7 = new ListNode(7);
         node1.next = node2;
         node2.next = node3;
-        node3.next = node6;
+        node3.next = node4;
         node4.next = node5;
-        node5.next = node6;
-        node6.next = node7;
-        // ListNode commonNode = getIntersectionNode(node1, node4);
-        // System.out.println(commonNode.val);
-        while (node1 != null) {
-            System.out.println(node1.val + "->");
-            node1 = node1.next;
-        }
+    //    node5.next = node6;
+     //   node6.next = node7;
+
 
         //直观打印一个链表的方式
- /*       ListNode currNode = fun(node1);
+   /*   ListNode currNode = reversePrint(node1);
         while (currNode.next != null) {
             System.out.print(currNode.val);
             System.out.print("->");
             currNode = currNode.next;
         }
         System.out.print(currNode.val);
-        System.out.println();
-*/
+        System.out.println();*/
+
     }
 }
