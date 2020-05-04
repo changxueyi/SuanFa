@@ -14,6 +14,7 @@ public class SX_03_两两反转链表 {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode temp = dummy;
+        //可以避免奇数偶数问题
         while (temp.next != null && temp.next.next != null) {
             ListNode start = temp.next;
             ListNode end = temp.next.next;

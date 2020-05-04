@@ -73,10 +73,10 @@ public class SX_14_树的遍历 {
             TreeNode node = stack.pollLast();
             arr.offerFirst(root.val);
             if (node.left != null) {
-                stack.add(root.left);
+                stack.add(node.left);
             }
             if (node.right != null) {
-                stack.add(root.right);
+                stack.add(node.right);
             }
         }
         return arr;
@@ -92,10 +92,10 @@ public class SX_14_树的遍历 {
             TreeNode node = queue.poll();
             System.out.println(node);
             if (node.left != null) {
-                queue.offer(root.left);
+                queue.offer(node.left);
             }
             if (node.right != null) {
-                queue.offer(root.right);
+                queue.offer(node.right);
             }
         }
     }

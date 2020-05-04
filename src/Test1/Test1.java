@@ -45,7 +45,10 @@ public class Test1 {
     }
     //1 1 2 3 5 8
     public static void main(String[] args) {
-        int a = fib(4);
+        /*int a = fib(4);
+        System.out.println(a);*/
+        String s = "hangcxcueyi";
+        int a =s.indexOf('c');
         System.out.println(a);
     }
 

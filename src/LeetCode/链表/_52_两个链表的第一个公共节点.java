@@ -85,11 +85,15 @@ public class _52_两个链表的第一个公共节点 {
         node1.next = node2;
         node2.next = node3;
         node3.next = node6;
+
+
         node4.next = node5;
         node5.next = node6;
         node6.next = node7;
-        ListNode commonNode = getIntersectionNode(node1, node4);
-        System.out.println(commonNode.val);
+
+        ListNode commonNode = getIntersectionNode2(node1, node4);
+       System.out.println(commonNode.val);
+
 
     }
 

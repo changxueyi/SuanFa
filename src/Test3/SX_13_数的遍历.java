@@ -110,18 +110,5 @@ public class SX_13_数的遍历 {
     }
 
 
-    public static void main(String[] args) {
-        TreeNode E = new TreeNode(4, null, null);
-        TreeNode D = new TreeNode(5, null, null);
-        TreeNode C = new TreeNode(3, E, D);
-        TreeNode B = new TreeNode(2, null, null);
-        TreeNode A = new TreeNode(1, B, C);
-        List<Integer> list = postorderTraversal(A);
-        System.out.println("-----list的输出结果-----");
-        for (int i = 0; i < list.size(); i++) {    // for循环方式
-            System.out.print(list.get(i) + " ");
-        }
-    }
-
 
 }
