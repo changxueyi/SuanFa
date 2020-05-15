@@ -7,7 +7,7 @@ package LeetCode.数组;
  * @Date 2020/2/20 23:47
  */
 public class _10_斐波那契额数列 {
-    public int fib(int n) {
+    public static int fib(int n) {
         if (n <= 1) {
             return n;
         }
@@ -41,7 +41,7 @@ public class _10_斐波那契额数列 {
 
     public static void main(String[] args) {
         //1 1 2  3 5 8 13
-        int result = fib1(4);
+        int result = fib(2);
         System.out.println(result);
     }
 }

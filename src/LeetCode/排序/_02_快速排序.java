@@ -64,16 +64,16 @@ public class _02_快速排序 {
                 arr[left] = pivot;
             }
         }
-        QuikSort(arr, L, left - 1);
-        QuikSort(arr, left + 1, R);
+        Quicksort(arr, L, left - 1);
+        Quicksort(arr, left + 1, R);
     }
 
     public static void main(String[] args) {
-        int[] arr = {49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 22};
+        int[] arr = {1,5,6,3,4,9,3};
         Quicksort(arr, 0, arr.length - 1);
         System.out.println("排序后:");
         for (int i : arr) {
-            System.out.println(i);
+            System.out.print(i+" ");
         }
     }
 

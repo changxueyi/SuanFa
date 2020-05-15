@@ -1,5 +1,7 @@
 package LeetCode.排序;
 
+import java.util.Arrays;
+
 /**
  * @ClassName _01_冒泡排序
  * @Description TODO
@@ -37,6 +39,12 @@ public class _01_冒泡排序 {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {4,5,2,1,2};
+        bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
 

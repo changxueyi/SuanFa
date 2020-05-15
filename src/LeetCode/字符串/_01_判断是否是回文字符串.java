@@ -19,8 +19,22 @@ public class _01_判断是否是回文字符串 {
         return true;
     }
 
+    //15点36分 2020/5/11
+    public static boolean fun(String s) {
+        if (s.length() == 0) {
+            return false;
+        }
+        int size = s.length();
+        for (int i = 0; i < size / 2; i++) {
+            if (s.charAt(i)!=s.charAt(size-i-1)){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         System.out.println(isPalindrome("changxueyi"));
-        System.out.println(isPalindrome("changnahc"));
+        System.out.println(fun("chang"));
     }
 }

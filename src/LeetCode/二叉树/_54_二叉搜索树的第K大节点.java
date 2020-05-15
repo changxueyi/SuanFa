@@ -11,6 +11,8 @@ import java.util.Stack;
  */
 public class _54_二叉搜索树的第K大节点 {
     //反向中序遍历，当遍历到第K个节点的时候，返回该节点指
+
+    //其实跟中序遍历代码差不多，多的也就是加了count，用来判断是否是等于K的
     public int kthLargest(TreeNode root, int k) {
         //count 用于指示已经查找过的数字个数
         int count = 0;

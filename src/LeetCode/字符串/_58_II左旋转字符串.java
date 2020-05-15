@@ -2,6 +2,7 @@ package LeetCode.字符串;
 
 import netscape.security.UserTarget;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -41,18 +42,35 @@ public class _58_II左旋转字符串 {
         return s2 + s1;
     }
 
+    //16点00分 2020 /5 /11 再战
+    public static String reverseLeftWords3(String s, int n) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = n; i < s.length(); i++) {
+            char c = s.charAt(i);
+            sb.append(c);
+        }
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            sb.append(c);
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
         String ss = "changxueyi";
         int n = 5;
-  //      String aa = reverseLeftWords(ss, n);
-    //    System.out.println(aa);
-        String dd =ss.substring(5);
+        //      String aa = reverseLeftWords(ss, n);
+        //    System.out.println(aa);
+        String dd = ss.substring(5);
         System.out.println(dd);
         System.out.println("*************");
-        String bb = reverseLeftWords1(ss,n);
+        String bb = reverseLeftWords1(ss, n);
         System.out.println(bb);
         System.out.println("****************");
-        String cc = reverseLeftWords2(ss,n);
+        String cc = reverseLeftWords2(ss, n);
         System.out.println(cc);
+        System.out.println("/*/*/*/*/*/*/*/*/");
+        String ee = reverseLeftWords3(ss, 2);
+        System.out.println(ee);
     }
 }

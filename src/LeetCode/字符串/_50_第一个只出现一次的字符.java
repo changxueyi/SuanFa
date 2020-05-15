@@ -5,6 +5,7 @@ import 并发泛型反射.多线程同步.HashMapThread;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @ClassName _50_第一个只出现一次的字符
@@ -45,10 +46,41 @@ public class _50_第一个只出现一次的字符 {
 
     }
 
+    //15点43分 2020/5/11 再战
+    public static char firstUniqChar1(String s) {
+        if (s.length() == 0 || s == null)
+            return ' ';
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
+            }
+        }
+
+        //遍历map
+        //hashmap是无序存储， 这样出数据，不准确
+       /*Set<Character> set  = map.keySet();
+        for (Character a : set) {
+            if (map.get(a)==1){
+                return a;
+            }
+        }
+        return ' ';*/
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (map.get(c)==1)
+                return c;
+        }
+        return ' ';
+    }
+
 
     public static void main(String[] args) {
-        String s = "loveleetcode";
-        char a = firstUniqChar(s);
+        String s = "leetcode";
+        char a = firstUniqChar1(s);
         System.out.println(a);
 
     }

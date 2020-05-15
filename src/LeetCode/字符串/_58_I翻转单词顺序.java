@@ -38,6 +38,21 @@ public class _58_I翻转单词顺序 {
         return res.toString().trim();
     }
 
+    //16点09分 2020 /5/11 再战
+    public String reverseWords2(String s) {
+        if (s.length() == 0 || s == null) return "";
+        StringBuilder sb = new StringBuilder();
+        int a = s.length() - 1;
+        int b = s.length() - 1;
+        while (a >= 0) {
+            while (a >= 0 && s.charAt(a) != ' ') a--;
+            sb.append(s.substring(a + 1, b + 1) + " ");
+            while (a >= 0 && s.charAt(a) == ' ') a--;
+            b = a;
+        }
+        return sb.toString().trim();
+    }
+
     public static void main(String[] args) {
         String s = "chang xue yi";
         String a = fun(s);
