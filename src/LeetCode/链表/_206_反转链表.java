@@ -1,6 +1,7 @@
 package LeetCode.链表;
 
 import 链表03.LinkedList;
+import 链表03.List;
 
 /**
  * @ClassName _206_反转链表https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/
@@ -23,14 +24,25 @@ public class _206_反转链表 {
         return newHead;
     }
 
+    //17点59分 2020/07/22
+    public ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode newHead = reverseList2(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    }
+
     //16点23分 2020/3/29
     public ListNode reverseList1(ListNode head) {
-        if (head==null||head.next==null){
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode newHead = reverseList1(head.next);
         head.next.next = head;
-        head.next= null;
+        head.next = null;
         return newHead;
     }
 
@@ -48,5 +60,18 @@ public class _206_反转链表 {
         return dummy;
     }
 
+    //再来一种方法
+    public ListNode fun02(ListNode head) {
+        ListNode pre = null;
+        ListNode dummy = null;
+        ListNode cur = head;
+        while (cur != null) {
+            pre = cur.next;
+            cur.next = dummy;
+            dummy = cur;
+            cur = pre;
+        }
+        return dummy;
+    }
 
 }

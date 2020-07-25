@@ -12,7 +12,7 @@ public class _141_环形链表 {
     boolean hasCycle1(ListNode head) {
         ListNode fast, slow;
         fast = slow = head;
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
 
@@ -24,13 +24,13 @@ public class _141_环形链表 {
 
 
     public boolean hasCycle(ListNode head) {
-        if (head==null||head.next==null){
+        if (head == null || head.next == null) {
             return false;
         }
         ListNode slow = head;
         ListNode fast = head.next;
-        while (slow!=fast){
-            if (fast==null||fast.next==null){
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
                 return false;
             }
             slow = slow.next;
@@ -38,19 +38,37 @@ public class _141_环形链表 {
         }
         return true;
     }
+
     //14点23分 2020/4/5
-    public boolean hasCycle02(ListNode head){
-        if (head==null || head.next==null){
+    public boolean hasCycle02(ListNode head) {
+        if (head == null || head.next == null) {
             return false;
         }
         ListNode slow = head;
         ListNode fast = head.next;
-        while (slow!=fast){
-            if (fast==null||fast.next==null){
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
                 return false;
             }
-            slow=slow.next;
-            fast=fast.next.next;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
+
+    //18点28分 2020/7/22
+    public boolean hasCycle03(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
         }
         return true;
     }

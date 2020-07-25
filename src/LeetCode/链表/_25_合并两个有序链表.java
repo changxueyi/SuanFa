@@ -59,5 +59,9 @@ public class _25_合并两个有序链表 {
         return newListNode.next;
     }
 
+    //09点05分 2020/07/25 北京
+    public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
+
+    }
 
 }

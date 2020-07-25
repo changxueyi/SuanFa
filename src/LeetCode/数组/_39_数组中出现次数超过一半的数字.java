@@ -41,14 +41,32 @@ public class _39_数组中出现次数超过一半的数字 {
 
     public int majorityElement2(int[] nums) {
         int target = nums[0];
-        int count = 1 ;
-        for (int i = 1 ; i< nums.length;i++){
-            if (target == nums[i]){
+        int count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (target == nums[i]) {
                 count++;
-            }else {
+            } else {
                 count--;
             }
-            if (count==0){
+            if (count == 0) {
+                target = nums[i];
+                count = 1;
+            }
+        }
+        return target;
+    }
+
+    //20点17分 2020 / 7 / 21
+    public int majorityElement3(int[] nums) {
+        int target = nums[0];
+        int count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (target == nums[i]) {
+                count++;
+            } else {
+                count--;
+            }
+            if (count == 0) {
                 target = nums[i];
                 count = 1;
             }

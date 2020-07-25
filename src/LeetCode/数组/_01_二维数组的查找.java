@@ -55,7 +55,7 @@ public class _01_二维数组的查找 {
         int cows = matrix[0].length;
         int r = 0;
         int c = cows - 1;
-        while (r <= rows - 1 && c>= 0) {
+        while (r <= rows - 1 && c >= 0) {
             if (target == matrix[r][c]) {
                 return true;
             } else if (target > matrix[r][c]) {
@@ -73,7 +73,8 @@ public class _01_二维数组的查找 {
         }
         int rows = matrix.length;
         int cows = matrix[0].length;
-        int row = 0; int cow = cows - 1;
+        int row = 0;
+        int cow = cows - 1;
         while (row <= rows - 1 && cow >= 0) {
             if (target == matrix[row][cow]) {
                 return true;
@@ -81,6 +82,25 @@ public class _01_二维数组的查找 {
                 row++;
             } else {
                 cow--;
+            }
+        }
+        return false;
+    }
+
+    //18点18分 2020/7/21
+    public boolean findNumberIn2DArray3(int[][] matrix, int target) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return false;
+        }
+        int row = matrix.length, col = matrix[0].length;
+        int r = 0, c = col - 1;
+        while (r <= row - 1 && c >= 0) {
+            if (target == matrix[r][c]) {
+                return true;
+            } else if (matrix[r][c] < target) {
+                c++;
+            } else {
+                r--;
             }
         }
         return false;

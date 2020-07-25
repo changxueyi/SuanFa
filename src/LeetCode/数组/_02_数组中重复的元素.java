@@ -66,16 +66,28 @@ public class _02_数组中重复的元素 {
         return -1;
     }
 
+    //18点27分 2020/7/21
+    public int findRepeatNumber3(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i])) {
+                return nums[i];
+            } else {
+                map.put(nums[i], 10);
+            }
+        }
+        return -1;
+    }
+
 
     /**
      * 测试用例
      */
     public static void main(int[] args) {
         int arr[] = new int[]{1, 2, 3, 4, 5};
-      //  findRepeatNumber(arr);
+        //  findRepeatNumber(arr);
         System.out.println(findRepeatNumber(arr));
     }
-
 
 
 }

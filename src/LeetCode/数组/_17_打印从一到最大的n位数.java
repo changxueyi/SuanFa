@@ -37,6 +37,21 @@ public class _17_打印从一到最大的n位数 {
         return res;
     }
 
+
+    //18点44分 2020/7/21
+    public int[] printNumbers3(int n) {
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            ans += 9 * Math.pow(10, i);
+        }
+        int[] res = new int[ans];
+        for (int i = 0; i < ans; i++) {
+            res[i] = i + 1;
+        }
+        return res;
+    }
+
+
     public static void main(String[] args) {
         _17_打印从一到最大的n位数 aa = new _17_打印从一到最大的n位数();
         aa.printNumbers(1);

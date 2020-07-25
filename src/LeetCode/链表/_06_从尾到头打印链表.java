@@ -58,14 +58,29 @@ public class _06_从尾到头打印链表 {
     public int[] reversePrint2(ListNode head) {
         //输入一个链表的头节点，从为到头返回来每个节点的值，用数组返回
         Stack<Integer> stack = new Stack<Integer>();
-        while (head!=null){
+        while (head != null) {
             stack.push(head.val);
             head = head.next;
         }
         int[] arr;
-        arr =new int[stack.size()];
-        for (int i = 0 ; i<arr.length;i++){
-            arr[i]  = stack.pop();
+        arr = new int[stack.size()];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = stack.pop();
+        }
+        return arr;
+    }
+
+    //20点31分 2020/07/21
+    public int[] reversePrint3(ListNode head) {
+        Stack<Integer> stack = new Stack<>();
+        while (head != null) {
+            stack.push(head.val);
+            head = head.next;
+        }
+        int[] arr;
+        arr = new int[stack.size()];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = stack.pop();
         }
         return arr;
     }

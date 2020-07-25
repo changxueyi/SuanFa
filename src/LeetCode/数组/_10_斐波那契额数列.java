@@ -39,6 +39,24 @@ public class _10_斐波那契额数列 {
         return second;
     }
 
+
+    public static int fib2(int n) {
+        if (n == 1) {
+            return n;
+        }
+        if (n == 2) {
+            return n;
+        }
+        int first = 1;
+        int second = 1;
+        for (int i = 3; i <= n; i++) {
+            int sum = first + second;
+            first = second;
+            second = sum;
+        }
+        return second;
+    }
+
     public static void main(String[] args) {
         //1 1 2  3 5 8 13
         int result = fib(2);

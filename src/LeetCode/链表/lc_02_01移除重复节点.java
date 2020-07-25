@@ -1,6 +1,7 @@
 package LeetCode.链表;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,6 +36,28 @@ public class lc_02_01移除重复节点 {
 
     //最容易理解的方式 移除重复节点： 双指针 + hashmap
     public ListNode removeDuplicateNodes1(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode pre = head;
+        ListNode latter = null;
+        Map<Integer, Integer> map = new HashMap<>();
+        while (pre != null) {
+            if (!map.containsKey(pre.val)) {
+                //把重复的清除了
+                map.put(pre.val, 1);
+                latter = pre;
+                pre = pre.next;
+            } else {
+                pre = pre.next;
+                latter.next = pre;
+            }
+        }
+        return head;
+    }
+
+    //18点13分 2020/07/22
+    public ListNode removeDuplicateNodes2(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }

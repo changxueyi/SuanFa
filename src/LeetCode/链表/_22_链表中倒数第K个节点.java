@@ -1,5 +1,7 @@
 package LeetCode.链表;
 
+import 链表03.List;
+
 /**
  * @ClassName _22_链表中倒数第K个节点
  * @Description TODO
@@ -46,16 +48,31 @@ public class _22_链表中倒数第K个节点 {
 
     //10点38分 2020/4/5
     public ListNode getKthFromEnd02(ListNode head, int k) {
-        ListNode fast =head;
+        ListNode fast = head;
         ListNode slow = head;
-        for (int i=0;i<k;i++){
-            fast= fast.next;
+        for (int i = 0; i < k; i++) {
+            fast = fast.next;
         }
-        while (fast!=null){
+        while (fast != null) {
             slow = slow.next;
             fast = fast.next;
         }
         return slow;
+    }
+
+    //08点55分 2020/07/25 北京
+    public ListNode getKthFromEnd3(ListNode head, int k) {
+        ListNode pre = head;
+        ListNode cur = head;
+        for (int i = 0; i < k; i++) {
+            pre = pre.next;
+        }
+        //TODO 为什么这里会出现空指针异常的为题，pre.next != null  return cur.next;
+        while (pre!=null) {
+            pre = pre.next;
+            cur = cur.next;
+        }
+        return cur;
     }
 
 }
