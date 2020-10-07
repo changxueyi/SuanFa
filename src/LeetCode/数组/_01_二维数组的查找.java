@@ -107,6 +107,29 @@ public class _01_二维数组的查找 {
     }
 
     /**
+     * 北京京东集团
+     */
+    public static boolean findNumberIn2DArray4(int[][] matrix, int target) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return false;
+        }
+        //行row 列col
+        //行长度
+        int row = matrix.length, col = matrix[0].length;
+        int r = row - 1, c = 0;
+        while (r >= 0 && c < col - 1) {
+            if (target == matrix[r][c]) {
+                return true;
+            } else if (matrix[r][c] < target) {
+                c++;
+            } else {
+                r--;
+            }
+        }
+        return false;
+    }
+
+    /**
      * 测试用例
      * 时间：2020/2/14 9：41
      *
@@ -114,7 +137,9 @@ public class _01_二维数组的查找 {
      */
     public static void main(String[] args) {
         int arr[][] = {{1, 2, 3}, {4, 5, 6}};
-        System.out.println(new _01_二维数组的查找().findNumberIn2DArray(arr, 5));
+        //System.out.println(new _01_二维数组的查找().findNumberIn2DArray(arr, 5));
+        Boolean b = findNumberIn2DArray4(arr,4);
+        System.out.println(b);
     }
 
 }

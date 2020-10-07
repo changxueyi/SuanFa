@@ -37,6 +37,20 @@ public class _27_二叉树的镜像 {
         return root;
     }
 
+    //北京 14点43分 2020/08/01
+    public TreeNode fun(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        fun(root.left);
+        fun(root.right);
+
+        return root;
+    }
+
     //博客大神解法二：我们先前序遍历这棵树的每个结点，如果遍历的结点有子节点，
     // 就交换它的两个子节点，当交换完所有的非叶子结点的左右子节点之后，我们就得到了树的镜像
     //https://blog.csdn.net/pcwl1206/article/details/86003097
@@ -68,13 +82,12 @@ public class _27_二叉树的镜像 {
 
     //Krahets 大神的解法
     public TreeNode mirrorTree2(TreeNode root) {
-        if (root==null) return null;
+        if (root == null) return null;
         TreeNode temp = root.left;
         root.left = mirrorTree2(root.right);
         root.right = mirrorTree2(temp);
         return root;
     }
-
 
 
     public static void main(String[] args) {

@@ -19,4 +19,15 @@ public class _876_求链表中的中间结点 {
         }
         return slow;
     }
+
+    //14点54分 2020/07/25 北京
+    public ListNode middleNode1(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+             slow = slow.next;
+             fast = fast.next;
+        }
+        return slow;
+    }
 }

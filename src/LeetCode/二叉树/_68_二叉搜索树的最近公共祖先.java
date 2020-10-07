@@ -21,4 +21,19 @@ public class _68_二叉搜索树的最近公共祖先 {
         return root;
     }
 
+    //15点29分 2020/08/01 北京
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
+        if (root==null||p==root||q==root){
+            return root;
+        }
+        TreeNode leftNode = lowestCommonAncestor1(root.left,p,q);
+        TreeNode rightNode = lowestCommonAncestor1(root.right,p,q);
+        if (leftNode==null){
+            return rightNode;
+        }
+        if (rightNode==null){
+            return leftNode;
+        }
+        return root;
+    }
 }

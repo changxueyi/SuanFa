@@ -28,5 +28,18 @@ public class _53_在排序数组中查找数字 {
         return j;
     }
 
+    /**
+     * 暴力法，直接用遍历查询
+     */
+    public int search1(int[] nums, int target) {
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) {
+                j++;
+            }
+        }
+        return j;
+    }
+
 
 }

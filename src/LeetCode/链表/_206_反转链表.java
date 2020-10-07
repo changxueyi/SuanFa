@@ -74,4 +74,28 @@ public class _206_反转链表 {
         return dummy;
     }
 
+    //14点41分 2020/07/25 北京
+    public ListNode reverseList5(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode newHead = reverseList5(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
+    //14点53分 2020/07/25 非递归实现
+    public ListNode reverseList6(ListNode head) {
+        ListNode pre = null;
+        ListNode dummy = null;
+        ListNode cur = head;
+        while (cur != null) {
+            pre = cur.next;
+            cur.next = dummy;
+            dummy = cur;
+            cur = pre;
+        }
+        return dummy;
+    }
 }

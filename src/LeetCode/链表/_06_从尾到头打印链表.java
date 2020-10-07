@@ -84,4 +84,19 @@ public class _06_从尾到头打印链表 {
         }
         return arr;
     }
+
+    // 14点31分 2020/10/07
+    public int[] reversePrint4(ListNode head) {
+        Stack<Integer> stack = new Stack<>();
+        while (head != null) {
+            stack.push(head.val);
+            head = head.next;
+        }
+        int[] arr;
+        arr = new int[stack.size()];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = stack.pop();
+        }
+        return arr;
+    }
 }

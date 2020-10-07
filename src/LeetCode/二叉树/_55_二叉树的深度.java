@@ -32,7 +32,15 @@ public class _55_二叉树的深度 {
     //树的层序遍历 / 广度优先搜索往往利用 队列 实现。
     //关键点： 每遍历一层，则计数器 +1 ，直到遍历完成，则可得到树的深度。
 
+    public int maxDepth1(TreeNode root) {
+        if (root==null) return 0;
+        return Math.max(maxDepth1(root.left),maxDepth1(root.right))+1;
+    }
 
-
+    //15点23分 2020/08/01 北京
+    public int maxDepth11(TreeNode root) {
+        if (root==null) return 0;
+        return Math.max(maxDepth11(root.left),maxDepth11(root.right))+1;
+    }
 
 }

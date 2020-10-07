@@ -45,7 +45,6 @@ public class SX_13_数的遍历 {
         if (root == null) {
             return output;
         }
-
         stack.add(root);
         while (!stack.isEmpty()) {
             TreeNode node = stack.pollLast();

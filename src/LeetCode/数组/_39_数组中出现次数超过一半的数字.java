@@ -73,4 +73,25 @@ public class _39_数组中出现次数超过一半的数字 {
         }
         return target;
     }
+
+    /**
+     * 京东集团
+     */
+    public int majorityElement4(int[] nums) {
+        //采用异或的模式进行解答本题
+        int target = nums[0];
+        int count = 1;
+        for (int i = 0; i < nums.length; i++) {
+            if (target == nums[i]) {
+                count++;
+            } else {
+                count--;
+            }
+            if (count == 0) {
+                target = nums[i];
+                count = 1;
+            }
+        }
+        return target;
+    }
 }

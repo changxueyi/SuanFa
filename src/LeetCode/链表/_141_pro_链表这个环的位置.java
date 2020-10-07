@@ -17,7 +17,6 @@ public class _141_pro_链表这个环的位置 {
             if (fast == slow)
                 break;
         }
-
         slow = head;
         while (slow != fast) {
             fast = fast.next;

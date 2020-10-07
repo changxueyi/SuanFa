@@ -1,8 +1,8 @@
 package LeetCode.链表;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.xml.crypto.Data;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @ClassName lc_02_01移除重复节点
@@ -78,5 +78,24 @@ public class lc_02_01移除重复节点 {
         return head;
     }
 
+    public static String fun(String aaa) {
+        return aaa.substring(1, aaa.indexOf("_"));
+    }
+
+    /*public static void main(String[] args) {
+        String b = "chang_li";
+        String a = fun(b);
+        System.out.println(a.toString());
+    }*/
+
+    public static void main(String[] args) {
+        /*Date data = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        System.out.println("当前时间为:"+ft.format(data));*/
+        Date date = new Date();
+        String str = String.format(Locale.US,"英文月份简称:%tb",date);
+        System.out.println(str);
+
+    }
 
 }

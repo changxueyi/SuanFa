@@ -55,7 +55,7 @@ public class _52_两个链表的第一个公共节点 {
         ListNode a = headA;
         ListNode b = headB;
 
-        while (a!=b) {
+        while (a != b) {
             if (a != null) {
                 a = a.next;
             } else {
@@ -70,6 +70,25 @@ public class _52_两个链表的第一个公共节点 {
         return a;
     }
 
+    //10点32分 2020/07/25  北京
+    public static ListNode getIntersectionNode3(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) return null;
+        ListNode a = headA;
+        ListNode b = headB;
+        while (a != b) {
+            if (a!=null){
+                a = a.next;
+            }else {
+                a = headB;
+            }
+            if (b!=null){
+                b = b.next;
+            }else {
+                b = headA;
+            }
+        }
+        return a;
+    }
 
     //测试
     public static void main(String[] args) {
@@ -92,7 +111,7 @@ public class _52_两个链表的第一个公共节点 {
         node6.next = node7;
 
         ListNode commonNode = getIntersectionNode2(node1, node4);
-       System.out.println(commonNode.val);
+        System.out.println(commonNode.val);
 
 
     }

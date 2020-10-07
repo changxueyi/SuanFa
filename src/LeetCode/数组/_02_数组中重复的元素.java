@@ -79,6 +79,24 @@ public class _02_数组中重复的元素 {
         return -1;
     }
 
+    /***
+     * 18点04分 2020/9/22
+     * 北京京东集团
+     */
+    public int findRepeatNumber4(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (map.containsKey(nums[i])) {
+                return nums[i];
+            } else {
+                map.put(nums[i],10);
+            }
+        }
+        return -1;
+    }
 
     /**
      * 测试用例

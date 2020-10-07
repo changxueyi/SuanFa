@@ -91,4 +91,29 @@ public class _05_替换空格 {
         }
         return sb.toString();
     }
+
+    /**
+     * 北京京东集团
+     * 18点09分 2020/9/22
+     */
+    public static String replaceSpace4(String s) {
+        if (s == null || s.length() == 0) {
+            return null;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                sb.append("%20");
+            } else {
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        String target = "chang xue yi ";
+        String result  = replaceSpace4(target);
+        System.out.println(result);
+    }
 }

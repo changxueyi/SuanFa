@@ -16,8 +16,8 @@ public class _203_删除链表指定值__重点 {
         dummyHead.next = head;
 
         ListNode prev = dummyHead;
-        while(prev.next != null){
-            if(prev.next.val == val)
+        while (prev.next != null) {
+            if (prev.next.val == val)
                 prev.next = prev.next.next;
             else
                 prev = prev.next;
@@ -52,6 +52,7 @@ public class _203_删除链表指定值__重点 {
         }
         return head;
     }
+
     //方法二
     public ListNode removeElements1(ListNode head, int val) {
         //当头节点为空，但是头节点就是要删除的元素时候
@@ -72,5 +73,20 @@ public class _203_删除链表指定值__重点 {
         return head;
     }
 
+
+    //14点34分 2020/7/25 北京
+    public ListNode removeElements2(ListNode head, int val) {
+        ListNode dummy = new ListNode(-1);
+        ListNode prev = dummy;
+        prev.next = dummy;
+        while (prev.next != null) {
+            if (prev.next.val!=val){
+                prev.next = prev.next.next;
+            }else {
+                prev = prev.next;
+            }
+        }
+        return dummy.next;
+    }
 
 }

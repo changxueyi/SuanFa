@@ -27,13 +27,14 @@ public class _94_二叉树中序遍历 {
 
     // 二分搜索树的中序遍历
     TreeNode root;
-    public void inOrder(){
+
+    public void inOrder() {
         inOrder(root);
     }
 
     // 中序遍历以node为根的二分搜索树, 递归算法
-    private void inOrder(TreeNode root){
-        if(root == null)
+    private void inOrder(TreeNode root) {
+        if (root == null)
             return;
 
         inOrder(root.left);
@@ -43,24 +44,37 @@ public class _94_二叉树中序遍历 {
 
     //中序遍历，非递归实现
     public List<Integer> preorderTraversal01(TreeNode root) {
-            List<Integer> res = new ArrayList<>();
-            Stack<TreeNode> stack = new Stack<>();
-            TreeNode curr = root;
-            while (curr != null || !stack.isEmpty()) {
-                while (curr != null) {
-                    stack.push(curr);
-                    curr = curr.left;
-                }
-                curr = stack.pop();
-                res.add(curr.val);
-                curr = curr.right;
+        List<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
             }
-            return res;
+            curr = stack.pop();
+            res.add(curr.val);
+            curr = curr.right;
         }
+        return res;
+    }
 
-
-
+    //15点41分 2020/08/01     北京
+    public List<Integer> preorderTraversal02(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            res.add(curr.val);
+            curr = curr.right;
+        }
+        return res;
     }
 
 
-
+}

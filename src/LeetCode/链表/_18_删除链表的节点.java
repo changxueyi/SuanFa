@@ -49,8 +49,23 @@ public class _18_删除链表的节点 {
             pre = cur;
             cur = cur.next;
         }
-        if (cur!=null)
+        if (cur != null)
             pre.next = cur.next;
+        return head;
+    }
+
+    public ListNode deleteNode2(ListNode head, int val) {
+        if (head.val == val)
+            return head.next;
+        ListNode pre = head;
+        ListNode cur = head.next;
+        while (cur != null && cur.val != val) {
+            pre = cur;
+            cur = cur.next;
+        }
+        if (cur != null) {
+            pre.next = cur.next;
+        }
         return head;
     }
 
@@ -70,46 +85,4 @@ public class _18_删除链表的节点 {
         }
     }
 
-
-
-
-  /*  //20点47分  2020/3/14
-    public ListNode deleteNode2(ListNode head, int val) {
-<<<<<<< HEAD
-        if (head.val == val) return head.next;
-        ListNode pre = head;
-        ListNode cur = head.next;
-        while (cur != null && cur.val != val) {
-=======
-        if (head.val==val) return head.next;
-        ListNode pre = head;
-        ListNode cur = head.next;
-        while (cur!=null && cur.val != val){
->>>>>>> a454660e5d5a51bb6461888777cf74cf727f8c22
-            pre = cur;
-            cur = cur.next;
-        }
-        pre.next = cur.next;
-        return head;
-    }
-
-    public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        ListNode node1 = new ListNode(4);
-        ListNode node2 = new ListNode(5);
-        ListNode node3 = new ListNode(9);
-        ListNode node4 = new ListNode(1);
-        ListNode node5 = new ListNode(9);
-        linkedList.add(node1);
-        linkedList.add(node2);
-        linkedList.add(node3);
-        linkedList.add(node4);
-        linkedList.add(node5);
-
-<<<<<<< HEAD
-        System.out.println("删除链表的节点：" + deleteNode(node1, 5));
-=======
-        System.out.println("删除链表的节点："+deleteNode(node1, 5) );
->>>>>>> a454660e5d5a51bb6461888777cf74cf727f8c22
-    }*/
 }

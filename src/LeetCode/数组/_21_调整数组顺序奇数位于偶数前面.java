@@ -1,5 +1,7 @@
 package LeetCode.数组;
 
+import java.util.Arrays;
+
 /**
  * @ClassName _21_调整数组顺序奇数位于偶数前面
  * @Description TODO
@@ -58,9 +60,32 @@ public class _21_调整数组顺序奇数位于偶数前面 {
         return nums;
     }
 
+    /**
+     * 19点55分 2020/9/22
+     *
+     * @param
+     */
+    public static int[] fun(int[] nums) {
+        int i = 0;
+        int j = nums.length - 1;
+        while (i < j) {
+            while (i < j && (nums[i] & 1) == 1) i++;
+            while (i < j && (nums[j] & 1) == 0) j--;
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+        }
+        return nums;
+    }
+
 
     public static void main(String[] args) {
-
+        int[] arr = new int[]{1, 4, 5, 6, 2};
+        int[] result = fun(arr);
+        /*for (int i = 0; i < result.length; i++) {
+            System.out.println(arr[i]);
+        }*/
+        System.out.println(Arrays.toString(arr));
     }
 
 

@@ -68,11 +68,15 @@ public class _22_链表中倒数第K个节点 {
             pre = pre.next;
         }
         //TODO 为什么这里会出现空指针异常的为题，pre.next != null  return cur.next;
-        while (pre!=null) {
+        while (pre != null) {
             pre = pre.next;
             cur = cur.next;
         }
         return cur;
+    }
+
+    public ListNode getKthFromEnd4(ListNode head, int k) {
+
     }
 
 }
